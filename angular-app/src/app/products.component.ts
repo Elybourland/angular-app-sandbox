@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     isDisabled = true;
     products = [];
     private productsSubscription: Subscription;
+    form: any;
 
     constructor(private productsService: ProductsService) {
         setTimeout(() => {
@@ -28,9 +29,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
     onAddProduct() {
         // this.products.push(this.productName);
-        if (form.valid) {
+        if (this.form.valid) {
         //     this.products.push(form.value.productName);
-        this.productsService.addProduct(form.value.productName);
+        this.productsService.addProduct(this.form.value.productName);
         }
     }
 
